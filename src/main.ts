@@ -18,8 +18,8 @@ async function bootstrap() {
     {
       origin: '*',
       methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-      allowedHeaders: 'Content-Type, Accept, Authorization, Origin, X-Requested-With',
-      preflightContinue: false
+      allowedHeaders: '*',
+      credentials: true
     }
   );
   await app.listen(3000);
