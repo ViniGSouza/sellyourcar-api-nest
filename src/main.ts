@@ -14,12 +14,7 @@ async function bootstrap() {
   );
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
   app.enableShutdownHooks();
-  app.enableCors(
-    {
-      origin: process.env.ALLOWED_ORIGIN || 'https://sell-yourcar.vercel.app',
-      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    }
-  );
+  app.enableCors();
   await app.listen(3000);
 }
 bootstrap();
