@@ -39,7 +39,7 @@ export class UserController {
           phone: user.phone
         }
       }
-    } if (userExists) {
+    } else if (userExists) {
       return {
         statusCode: 409,
         message: "E-mail de usuário já existe!",
