@@ -6,7 +6,7 @@ import { HashPasswordPipe } from "src/resources/pipes/hash-password.pipe";
 import { JwtAuthGuard } from "../auth/auth.guard";
 import { RequestUser } from "../auth/auth.strategy";
 
-@Controller("/users")
+@Controller("users")
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
