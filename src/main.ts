@@ -16,9 +16,7 @@ async function bootstrap() {
   app.enableShutdownHooks();
   app.enableCors(
     {
-      origin: 'https://sell-yourcar.vercel.app',
-      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-      allowedHeaders: 'Content-Type, Accept, Authorization, Origin, X-Requested-With',
+      origin: ['*', 'https://sell-yourcar.vercel.app'],
     }
   );
   await app.listen(3000);
