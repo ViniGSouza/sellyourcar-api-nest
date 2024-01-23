@@ -14,7 +14,11 @@ async function bootstrap() {
   );
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
   app.enableShutdownHooks();
-  app.enableCors();
+  app.enableCors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true,
+  });
   await app.listen(3000);
 }
 bootstrap();
