@@ -45,6 +45,11 @@ export class UserService {
         email
       }
     });
+  
+    if (!user) {
+      return null;
+    }
+  
     return {
       name: user.name,
       email: user.email,
@@ -52,6 +57,7 @@ export class UserService {
       password: user.password,
     };
   }
+  
 
   async findById(id: string) {
     const user = await this.prisma.user.findUnique({
